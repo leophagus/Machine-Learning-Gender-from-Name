@@ -1,4 +1,4 @@
-# Created by Octave 3.8.2, Sun Sep 17 14:23:17 2017 PDT <parik@shuku>
+# Created by Octave 3.8.2, Sun Sep 17 14:23:17 2017 PDT 
 # name: Theta1
 # type: matrix
 # rows: 50
