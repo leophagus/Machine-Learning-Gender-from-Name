@@ -2,7 +2,7 @@
 
 ## Background
 I just finished Exercise-4 of Dr Andrew Ng's most excellent [Machine
-Learning] [https://www.coursera.org/learn/machine-learning] course.  This is the first exercise where
+Learning](https://www.coursera.org/learn/machine-learning) course.  This is the first exercise where
 you get to train a neural network with back propagation to recognize handwritten digits from the MNIST
 data set. Once I got that working, I wanted to see if I can apply what I learnt to a real-world problem,
 where the data isnt in a ready to consume format like MNIST. And whats more important than knowing
@@ -10,8 +10,7 @@ if the person you are chatting with is a Male or Female :)
 
 ## Data Set
 I found this Government data-set from the City of NY: [Most Popular Baby Names by Sex and Mother's
-Ethnic Group, New York City]
-[https://catalog.data.gov/dataset/most-popular-baby-names-by-sex-and-mothers-ethnic-group-new-york-city-8c742].
+Ethnic Group, New York City](https://catalog.data.gov/dataset/most-popular-baby-names-by-sex-and-mothers-ethnic-group-new-york-city-8c742).
 22036 samples with baby names from four years, 2011 to 2014. They have a downloadable csv file with
 the following format:
 
