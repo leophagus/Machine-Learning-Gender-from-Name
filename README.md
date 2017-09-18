@@ -1,6 +1,6 @@
 # Machine Learning - Neural Network to Predict Gender from First Name
 
-#H2 Background
+## Background
 I just finished Exercise-4 of Dr Andrew Ng's most excellent [Machine
 Learning] [https://www.coursera.org/learn/machine-learning] course.  This is the first exercise where
 you get to train a neural network with back propagation to recognize handwritten digits from the MNIST
@@ -8,7 +8,7 @@ data set. Once I got that working, I wanted to see if I can apply what I learnt 
 where the data isnt in a ready to consume format like MNIST. And whats more important than knowing
 if the person you are chatting with is a Male or Female :)
 
-#H2 Data Set
+## Data Set
 I found this Government data-set from the City of NY: [Most Popular Baby Names by Sex and Mother's
 Ethnic Group, New York City]
 [https://catalog.data.gov/dataset/most-popular-baby-names-by-sex-and-mothers-ethnic-group-new-york-city-8c742].
@@ -17,7 +17,7 @@ the following format:
 
 | Year of Birth | Gender | Ethnicity | Child's First Name | Count | Rank |
 
-#H2 Data Prep
+## Data Prep
 For gender prediction using the Neural Network we need a training set that has the names and the
 gender of the baby. Names are strings of characters. First step is to
 find a suitable representation of the names. ASCII is a good option, but the part of ASCII used by
@@ -26,19 +26,19 @@ rebaed to the first alphabet 'A', seemed like a good idea.  A simple python scri
 converts the string to ASCII and subtracts 'A' to rebase. The names are thus converted to arrays of
 numbers, each number from 0 to 26. Each name is limited to 10 chars with zero-padding at the end. 
 
-#H2 Neural Network Model
+## Neural Network Model
 The network we developed during Ex-4 has three layers: input, hidden and output. Since I wanted to
 reuse this Matlab/Octave code, I had to go with the same 3 layers. The input layer has 10 nodes, one
 for each number, representing a char from the name. The output layer has 2 nodes, one each for Male
 and Female labels. The number of nodes in the hidden layer was a big unknown. I tried several values
 and settled on 100. I need to do more rigorous analysis on this key parameter.
 
-#H2 Training
+## Training
 The Ex-4 solution uses fmincg (Conjugate Gradient) to minimize the errors for back-propagation. The
 number of iterations has a big impact on the errors. I went upto 1500 iters and got close to 97.25%
 accuracy on the test data. 
 
-#H2 Testing
+## Testing
 genderFromNamePredict lets you pass in any name and get the estimated gender. I declare the class
 with no pessimism if one of the output classes is better than the other by > 10%. If they are
 between 5 and 10%, I color the prediction with "probably" :) If the gap is too close (< 5%), then I
@@ -70,7 +70,7 @@ octave:42> genderFromNamePredict (Theta1, Theta2, 'edna');
 edna is a Girl (F: 86.03%, M: 14.04%)
 ```
 
-#H2 Next Steps
+## Next Steps
 This was so much fun. Thrilled I was able to take something that I developed for an
 online class and apply it to a real world data-set and get reasonably okay results. Next step is
 formalize the network model and parameters (lambda, hidden layers), split the data set into
