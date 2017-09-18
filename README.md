@@ -21,7 +21,7 @@ For gender prediction using the Neural Network we need a training set that has t
 gender of the baby. Names are strings of characters. First step is to
 find a suitable representation of the names. ASCII is a good option, but the part of ASCII used by
 regular names is very small (i.e. 26 out of 256). I felt that maybe this might hurt training. ASCII
-rebaed to the first alphabet 'A', seemed like a good idea.  A simple python script (prep.py)
+rebased to the first alphabet 'A', seemed like a good idea.  A simple python script (prep.py)
 converts the string to ASCII and subtracts 'A' to rebase. The names are thus converted to arrays of
 numbers, each number from 0 to 26. Each name is limited to 10 chars with zero-padding at the end. 
 
@@ -44,11 +44,15 @@ between 5 and 10%, I color the prediction with "probably" :) If the gap is too c
 declare a tie. 
 
 ```Matlab
+octave:3> load ('g_ni_10_100_1500.m');
 octave:4> genderFromNamePredict (Theta1, Theta2, 'Sheldon');
 Sheldon is a Boy (F: 1.17%, M: 98.83%)
 ```
 
-Tring it on the Simpson's family, it worked for all except Bart. But it was right for Barthalomew !
+Trying it on the beloved [Simpsons](https://en.wikipedia.org/wiki/The_Simpsons)
+family, it worked for all except
+[Bart](https://en.wikipedia.org/wiki/Bart_Simpson). But it was right for
+Bartholomew, which is Bart's full name :) !
 
 ```Matlab
 octave:10> genderFromNamePredict (Theta1, Theta2, 'Homer');
@@ -57,21 +61,22 @@ octave:11> genderFromNamePredict (Theta1, Theta2, 'Marge');
 Marge is a Girl (F: 83.47%, M: 16.52%)
 octave:12> genderFromNamePredict (Theta1, Theta2, 'Maggie');
 Maggie is a Girl (F: 98.80%, M: 1.20%)
-octave:8> genderFromNamePredict (Theta1, Theta2, 'Bart');
+octave:13> genderFromNamePredict (Theta1, Theta2, 'Bart');
 Bart is a Girl (F: 99.40%, M: 0.60%)
-octave:9> genderFromNamePredict (Theta1, Theta2, 'Lisa');
+octave:14> genderFromNamePredict (Theta1, Theta2, 'Lisa');
 Lisa is a Girl (F: 90.40%, M: 9.64%)
-octave:39> genderFromNamePredict (Theta1, Theta2, 'barthalomew');
-barthalomew is a Boy (F: 0.02%, M: 99.98%)
-octave:28> genderFromNamePredict (Theta1, Theta2, 'ned');
+octave:15> predict2 (Theta1, Theta2, 'bartholomew');
+bartholomew is a Boy (F: 0.02%, M: 99.98%)
+octave:16> genderFromNamePredict (Theta1, Theta2, 'ned');
 ned is a Boy (F: 16.73%, M: 83.02%)
-octave:42> genderFromNamePredict (Theta1, Theta2, 'edna');
+octave:17> genderFromNamePredict (Theta1, Theta2, 'edna');
 edna is a Girl (F: 86.03%, M: 14.04%)
 ```
 
 ## Next Steps
-This was so much fun. Thrilled I was able to take something that I developed for an
-online class and apply it to a real world data-set and get reasonably okay results. Next step is
-formalize the network model and parameters (lambda, hidden layers), split the data set into
-training, cross-verification and test sets and use rigorous methods to determine the parameters.
-Additional data-sets from other sources would be a nice addition as well.
+This was so much fun. Iam Thrilled that I was able to take something that I
+just learnt and apply it to a real world data-set and get reasonably okay
+results. Next step is to formalize the network model and parameters (lambda,
+hidden layers), split the data set into training, cross-verification and test
+sets and use rigorous methods to determine the parameters.  Additional
+data-sets from other sources would be a nice addition as well.
