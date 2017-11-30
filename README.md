@@ -74,9 +74,7 @@ edna is a Girl (F: 86.03%, M: 14.04%)
 ```
 
 ## Next Steps
-This was so much fun. Iam Thrilled that I was able to take something that I
-just learnt and apply it to a real world data-set and get reasonably okay
-results. Next step is to formalize the network model and parameters (lambda,
-hidden layers), split the data set into training, cross-verification and test
-sets and use rigorous methods to determine the parameters.  Additional
-data-sets from other sources would be a nice addition as well.
+This was a fun exercise. The trained model is now available as a python module on PyPI:
+[gender_ai](https://github.com/leophagus/gender_ai). ML frameworks take out a lot of the drudgery in
+building and training MLP models. With just a few lines of code in Keras/Tensorflow, I was able to
+train a larger model on a much larger (80k samples) dataset. 
